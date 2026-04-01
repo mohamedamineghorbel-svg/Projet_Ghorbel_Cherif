@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGconnect - Mon Profil</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        /* Specific Profile Styles */
+        .profile-header {
+            background-color: var(--neutral-white);
+            padding: 3rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            text-align: center;
+        }
+        .profile-avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .reach-indicator {
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+            background: var(--accent-orange);
+            color: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .profile-bio {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+        }
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .profile-content {
+            padding: 3rem 0;
+        }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">SDG<span>connect</span></a>
+            <nav class="navbar-nav">
+                <a href="index.html">Accueil</a>
+                <a href="jobs.html">Offres</a>
+                <a href="profile.html" class="active">Mon Profil</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Profile Header -->
+        <section class="profile-header">
+            <div class="container">
+                <div class="profile-avatar-wrapper">
+                    <!-- Professional Avatar Placeholder -->
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Profile avatar" class="avatar avatar-lg">
+                    <div class="reach-indicator" title="Niveau d'impact">8</div>
+                </div>
+                
+                <div class="profile-info">
+                    <h1>Sarah L.</h1>
+                    <div class="mb-2">
+                        <span class="badge badge-green">Écolo Actif</span>
+                        <span class="badge badge-blue">Mentor</span>
+                        <span class="badge badge-orange">Top Contrib</span>
+                    </div>
+                    <p class="profile-bio">Passionnée par le développement durable et l'économie circulaire. Je cherche des missions pour aider les assos locales à réduire leur empreinte carbone.</p>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Missions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Connexions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">150h</div>
+                        <div class="stat-label">Impact</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Feed -->
+        <section class="profile-content">
+            <div class="container grid">
+                <div class="col-md-8">
+                    <h2 class="mb-4">Activité récente</h2>
+                    <!-- Activity item -->
+                    <div class="card mb-4" style="flex-direction: row;">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60" alt="Event" style="width: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">A participé à "Plantation Collective"</h3>
+                            <p class="card-text" style="font-size: 0.9rem;">"Superbe expérience de pouvoir planter ces arbres en équipe ! Merci aux organisateurs."</p>
+                            <span class="job-date" style="font-size: 0.85rem; color: var(--text-muted);">Il y a 3 jours</span>
+                        </div>
+                    </div>
+                    <!-- Activity item -->
+                    <div class="card mb-4" style="flex-direction: row;">
+                        <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60" alt="Event" style="width: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">S'est inscrit à "Atelier Recyclage"</h3>
+                            <span class="job-date" style="font-size: 0.85rem; color: var(--text-muted);">Il y a 1 semaine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="mb-4">Compétences</h2>
+                    <div class="card p-3">
+                        <div class="card-body" style="padding: 1.5rem;">
+                            <span class="badge badge-blue">Management de Projet</span>
+                            <span class="badge badge-green">Économie Circulaire</span>
+                            <span class="badge badge-orange">Animation d'Atelier</span>
+                            <span class="badge badge-blue">Réseaux Sociaux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/main.js"></script>
+</body>
+</html>

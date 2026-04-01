@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGconnect - Offres & Opportunités</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages/jobs.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">SDG<span>connect</span></a>
+            <nav class="navbar-nav">
+                <a href="index.html">Accueil</a>
+                <a href="jobs.html" class="active">Offres</a>
+                <a href="profile.html">Mon Profil</a>
+                <a href="#" class="btn btn-primary btn-nav-cta">Se Connecter</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container text-center">
+                <h1>Trouvez la mission qui vous <span class="text-green">inspire</span></h1>
+                <p>Découvrez des opportunités pour avoir un impact positif sur la société et l'environnement.</p>
+
+                <!-- Search & Filters -->
+                <div class="search-bar">
+                    <input type="text" id="job-search" placeholder="Rechercher une offre, un ODD..."
+                        class="form-control">
+                    <select id="filter-type" class="form-control">
+                        <option value="all">Tous les types</option>
+                        <option value="emploi">Emploi</option>
+                        <option value="benevolat">Bénévolat</option>
+                        <option value="stage">Stage</option>
+                    </select>
+                    <button class="btn btn-primary" id="search-btn">Chercher</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jobs Listing -->
+        <section class="jobs-list">
+            <div class="container">
+                <div class="job-results-header">
+                    <h2>Offres récentes (<span id="job-count">4</span>)</h2>
+                </div>
+
+                <div class="grid" id="jobs-container">
+                    <!-- Job Card 1 -->
+                    <div class="col-md-6 card job-card" data-type="emploi">
+                        <div class="card-body">
+                            <div class="job-meta">
+                                <span class="badge badge-orange">Emploi CDI</span>
+                                <span class="job-date">Publié il y a 2j</span>
+                            </div>
+                            <h3 class="card-title">Chef de Projet Energies Renouvelables</h3>
+                            <div class="card-tags">
+                                <span class="badge badge-blue">ODD 7 - Énergie</span>
+                            </div>
+                            <p class="card-text">Nous recherchons un chef de projet passionné pour développer des
+                                installations solaires en milieu urbain.</p>
+                            <div class="job-company">
+                                <strong>GreenTech Solutions</strong> • Paris, France
+                            </div>
+                            <a href="#" class="btn btn-secondary mt-3">Postuler</a>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 2 -->
+                    <div class="col-md-6 card job-card" data-type="benevolat">
+                        <div class="card-body">
+                            <div class="job-meta">
+                                <span class="badge badge-green">Bénévolat</span>
+                                <span class="job-date">Publié il y a 4j</span>
+                            </div>
+                            <h3 class="card-title">Animateur Ateliers Zéro Déchet</h3>
+                            <div class="card-tags">
+                                <span class="badge badge-blue">ODD 12 - Consommation</span>
+                            </div>
+                            <p class="card-text">Rejoignez notre association pour animer des ateliers de sensibilisation
+                                auprès des jeunes de votre quartier.</p>
+                            <div class="job-company">
+                                <strong>ÉcoCitoyens Asso</strong> • Lyon, France
+                            </div>
+                            <a href="#" class="btn btn-secondary mt-3">S'engager</a>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 3 -->
+                    <div class="col-md-6 card job-card" data-type="stage">
+                        <div class="card-body">
+                            <div class="job-meta">
+                                <span class="badge badge-blue">Stage (6 mois)</span>
+                                <span class="job-date">Publié il y a 1 sem</span>
+                            </div>
+                            <h3 class="card-title">Analyste Données Impact Social</h3>
+                            <div class="card-tags">
+                                <span class="badge badge-orange">ODD 10 - Inégalités</span>
+                            </div>
+                            <p class="card-text">Accompagnez-nous dans la mesure de l'impact social de nos programmes
+                                d'insertion professionnelle.</p>
+                            <div class="job-company">
+                                <strong>Impact Data</strong> • Télétravail
+                            </div>
+                            <a href="#" class="btn btn-secondary mt-3">Postuler</a>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 4 -->
+                    <div class="col-md-6 card job-card" data-type="benevolat">
+                        <div class="card-body">
+                            <div class="job-meta">
+                                <span class="badge badge-green">Bénévolat</span>
+                                <span class="job-date">Aujourd'hui</span>
+                            </div>
+                            <h3 class="card-title">Distributeur Banque Alimentaire</h3>
+                            <div class="card-tags">
+                                <span class="badge badge-blue">ODD 2 - Faim Zéro</span>
+                            </div>
+                            <p class="card-text">Nous avons besoin de bras pour la distribution alimentaire de ce samedi
+                                matin.</p>
+                            <div class="job-company">
+                                <strong>Solidarité Alimentaire</strong> • Marseille, France
+                            </div>
+                            <a href="#" class="btn btn-secondary mt-3">S'engager</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/main.js"></script>
+    <script src="../js/jobs.js"></script>
+</body>
+
+</html>
