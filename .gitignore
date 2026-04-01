@@ -1,0 +1,27 @@
+# Dépendances Node.js — ne jamais commiter ce dossier (trop lourd)
+node_modules/
+
+# Variables d'environnement — contient mots de passe et clés secrètes
+.env
+.env.local
+.env.*.local
+
+# Fichiers système macOS / Windows
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dossier de build (production)
+dist/
+build/
+
+# Fichiers VS Code (optionnel — gardez si vous voulez partager vos settings)
+# .vscode/
+
+# Fichiers temporaires
+*.tmp
+*.temp
