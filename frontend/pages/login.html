@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - SDGconnect</title>
+  <meta name="description" content="Connectez-vous à SDGconnect pour trouver des offres, des événements et agir pour les ODD.">
+  <title>Connexion - SDGconnect</title>
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/components.css">
   <style>
@@ -13,18 +14,18 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, rgba(76, 175, 80, 0.08) 100%);
     }
     .login-container {
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       padding: 0 20px;
     }
     .login-card {
       background-color: var(--neutral-white);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-md);
-      padding: 40px;
+      padding: 44px 40px;
       text-align: center;
     }
     .login-logo {
@@ -32,27 +33,42 @@
       font-size: 2rem;
       font-weight: 700;
       color: var(--primary-blue);
-      margin-bottom: 30px;
+      margin-bottom: 8px;
       display: inline-block;
+      text-decoration: none;
     }
     .login-logo span {
       color: var(--secondary-green);
     }
     .login-subtitle {
       color: var(--text-muted);
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       font-size: 0.95rem;
     }
     .forgot-password {
       display: block;
-      margin-top: 15px;
+      margin-top: 12px;
       font-size: 0.85rem;
       text-align: right;
+      color: var(--primary-blue);
     }
     .register-link {
-      margin-top: 20px;
+      margin-top: 22px;
       font-size: 0.9rem;
       color: var(--text-muted);
+    }
+    .login-error {
+      background-color: #fdecea;
+      color: #c62828;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      display: block;
+      text-align: left;
+    }
+    .login-error:empty {
+      display: none;
     }
   </style>
 </head>
@@ -60,30 +76,40 @@
 
   <div class="login-container">
     <div class="login-card">
-      <div class="login-logo">SDG<span>connect</span></div>
-      <p class="login-subtitle">Sign in to continue connecting and collaborating for sustainability.</p>
-      
-      <form action="events.html" method="GET">
+      <a href="index.html" class="login-logo">SDG<span>connect</span></a>
+      <p class="login-subtitle">Connectez-vous pour collaborer et agir pour les ODD.</p>
+
+      <!-- Error message (populated by auth.js) -->
+      <span id="login-error" class="login-error" role="alert"></span>
+
+      <form id="login-form" novalidate>
         <div class="form-group">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+          <label for="email" class="form-label">Adresse e-mail</label>
+          <input type="email" id="email" class="form-control"
+                 placeholder="votre@email.com" autocomplete="email" required>
         </div>
-        
+
         <div class="form-group">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+          <label for="password" class="form-label">Mot de passe</label>
+          <input type="password" id="password" class="form-control"
+                 placeholder="••••••••" autocomplete="current-password" required>
         </div>
-        
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Sign In</button>
+
+        <button type="submit" id="login-submit" class="btn btn-primary"
+                style="width: 100%; margin-top: 10px;">
+          Se Connecter
+        </button>
       </form>
-      
-      <a href="#" class="forgot-password">Forgot Password?</a>
-      
+
+      <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+
       <div class="register-link">
-        Don't have an account? <a href="#">Register here</a>
+        Pas encore de compte ? <a href="#">Créer un compte</a>
       </div>
     </div>
   </div>
 
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
 </body>
 </html>

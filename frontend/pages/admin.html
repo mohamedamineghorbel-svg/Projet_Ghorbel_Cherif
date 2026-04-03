@@ -97,7 +97,7 @@
         </ul>
       </nav>
       <div class="profile-indicator">
-        <a href="login.html" class="btn btn-outline" style="padding: 6px 16px;">Logout</a>
+        <a href="login.html" class="btn btn-outline" style="padding: 6px 16px;" data-action="logout">Déconnexion</a>
         <div class="profile-pic">A</div>
       </div>
     </div>
@@ -137,7 +137,7 @@
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="events-tbody">
             <tr>
               <td>Coastal Cleanup Drive 2026</td>
               <td>EcoWarriors</td>
@@ -176,5 +176,8 @@
     </main>
   </div>
 
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin.js"></script>
 </body>
 </html>

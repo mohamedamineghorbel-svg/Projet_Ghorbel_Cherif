@@ -1,36 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events - SDGconnect</title>
+  <meta name="description" content="Découvrez et rejoignez des événements en faveur du développement durable près de chez vous.">
+  <title>Événements - SDGconnect</title>
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/components.css">
-  <style>
-    .page-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pages/events.css">
 </head>
 <body>
 
   <!-- Header / Navigation -->
   <header class="header">
     <div class="container header-container">
-      <div class="logo">SDG<span>connect</span></div>
+      <a href="index.html" class="logo">SDG<span>connect</span></a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="events.html" class="active">Events</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="events.html" class="active">Événements</a></li>
+          <li><a href="jobs.html">Offres</a></li>
           <li><a href="admin.html">Admin</a></li>
         </ul>
       </nav>
       <div class="profile-indicator">
-        <a href="login.html" class="btn btn-outline" style="padding: 6px 16px;">Logout</a>
+        <a href="login.html" class="btn btn-outline" style="padding: 6px 16px;" data-action="logout">Déconnexion</a>
         <div class="profile-pic">A</div>
       </div>
     </div>
@@ -38,69 +32,84 @@
 
   <!-- Main Content -->
   <main class="main-content container py-4">
+
+    <!-- Page Header -->
     <div class="page-header">
       <div>
-        <h1>Upcoming Events</h1>
-        <p class="text-muted">Discover and join sustainability events happening near you.</p>
+        <h1>Événements à venir</h1>
+        <p class="text-muted">Découvrez et rejoignez des événements durables près de chez vous.</p>
+        <p class="events-count-label"><span id="event-count">0</span> événement(s) trouvé(s)</p>
       </div>
       <div>
-        <button class="btn btn-primary">+ Create Event</button>
+        <button id="create-event-btn" class="btn btn-primary">+ Créer un événement</button>
       </div>
     </div>
 
-    <!-- Event Grid -->
-    <div class="grid">
-      
-      <!-- Event Card 1 -->
-      <div class="col-4">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=500&q=80" alt="Climate Action" class="card-img-top">
-          <div class="card-body">
-            <span class="badge badge-green mb-4">Climate Action</span>
-            <h3 class="card-title mt-4">Coastal Cleanup Drive 2026</h3>
-            <p class="card-text">Join us in making our beaches plastic-free. Connect with local environmentalists and make a real difference.</p>
-            <div class="card-footer">
-              <span class="text-muted" style="font-size: 0.85rem;">Oct 12 • 9:00 AM</span>
-              <a href="#" class="btn btn-secondary">RSVP</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event Card 2 -->
-      <div class="col-4">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=500&q=80" alt="Quality Education" class="card-img-top">
-          <div class="card-body">
-            <span class="badge badge-blue mb-4">Quality Education</span>
-            <h3 class="card-title mt-4">Tech for Good Workshop</h3>
-            <p class="card-text">Learn how to use open-source tech to solve educational inequality in underprivileged areas.</p>
-            <div class="card-footer">
-              <span class="text-muted" style="font-size: 0.85rem;">Nov 05 • 2:00 PM</span>
-              <a href="#" class="btn btn-secondary">RSVP</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event Card 3 -->
-      <div class="col-4">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=500&q=80" alt="Innovation" class="card-img-top">
-          <div class="card-body">
-            <span class="badge badge-orange mb-4">Innovation</span>
-            <h3 class="card-title mt-4">Green Energy Hackathon</h3>
-            <p class="card-text">A 48-hour challenge to build innovative software solutions promoting renewable energy use worldwide.</p>
-            <div class="card-footer">
-              <span class="text-muted" style="font-size: 0.85rem;">Dec 01 • 5:00 PM</span>
-              <a href="#" class="btn btn-secondary">RSVP</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <!-- Search & Filter Toolbar -->
+    <div class="events-toolbar">
+      <input type="text" id="event-search" class="form-control"
+             placeholder="Rechercher un événement, une catégorie...">
+      <select id="filter-category" class="form-control">
+        <option value="all">Toutes les catégories</option>
+        <option value="Climat">Climat</option>
+        <option value="Éducation">Éducation</option>
+        <option value="Énergie">Énergie</option>
+        <option value="Biodiversité">Biodiversité</option>
+        <option value="Santé">Santé</option>
+        <option value="Innovation">Innovation</option>
+      </select>
+      <button id="event-search-btn" class="btn btn-primary">Chercher</button>
     </div>
+
+    <!-- Events Grid — populated dynamically by events.js -->
+    <div class="events-grid" id="events-grid">
+      <!-- Cards injected here -->
+    </div>
+
   </main>
 
+  <!-- Create Event Modal -->
+  <div id="create-event-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="close-event-modal" class="modal-close-btn" aria-label="Fermer">&times;</button>
+      <h2 id="modal-title" style="margin-bottom:1.5rem;">Créer un événement</h2>
+      <form id="create-event-form">
+        <div class="form-group">
+          <label for="new-event-title" class="form-label">Titre *</label>
+          <input type="text" id="new-event-title" class="form-control" placeholder="Nom de l'événement" required>
+        </div>
+        <div class="form-group">
+          <label for="new-event-category" class="form-label">Catégorie</label>
+          <select id="new-event-category" class="form-control">
+            <option value="Climat">Climat</option>
+            <option value="Éducation">Éducation</option>
+            <option value="Énergie">Énergie</option>
+            <option value="Biodiversité">Biodiversité</option>
+            <option value="Santé">Santé</option>
+            <option value="Innovation">Innovation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="new-event-date" class="form-label">Date &amp; heure *</label>
+          <input type="datetime-local" id="new-event-date" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="new-event-location" class="form-label">Lieu</label>
+          <input type="text" id="new-event-location" class="form-control" placeholder="Ville, adresse...">
+        </div>
+        <div class="form-group">
+          <label for="new-event-desc" class="form-label">Description</label>
+          <textarea id="new-event-desc" class="form-control" rows="3" placeholder="Décrivez l'événement..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:0.5rem;">
+          Créer l'événement
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/events.js"></script>
 </body>
 </html>

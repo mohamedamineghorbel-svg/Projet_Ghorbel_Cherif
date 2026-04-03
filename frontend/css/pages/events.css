@@ -1,0 +1,159 @@
+/* =============================================================
+   events.css — SDGconnect Events Page Styles
+   ============================================================= */
+
+/* ── Page Header ─────────────────────────────────────────────── */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header h1 {
+    margin-bottom: 0.25rem;
+}
+
+/* ── Events Grid ─────────────────────────────────────────────── */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* ── Search / Filter Bar ─────────────────────────────────────── */
+.events-toolbar {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.events-toolbar .form-control {
+    flex: 1;
+    min-width: 160px;
+}
+
+/* ── Event Card ──────────────────────────────────────────────── */
+.event-card .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.event-card .card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.event-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+}
+
+.event-card .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ── RSVP Button ─────────────────────────────────────────────── */
+.rsvp-btn {
+    min-width: 90px;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.rsvp-btn:disabled {
+    opacity: 0.8;
+    cursor: default;
+}
+
+/* ── Event Count Badge ───────────────────────────────────────── */
+.events-count-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* ── Create Event Modal ──────────────────────────────────────── */
+#create-event-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+#create-event-modal.modal-open {
+    display: flex;
+}
+
+.modal-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    width: 100%;
+    max-width: 520px;
+    position: relative;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+    animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    color: var(--text-muted);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.modal-close-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+    }
+
+    .events-toolbar {
+        flex-direction: column;
+    }
+}

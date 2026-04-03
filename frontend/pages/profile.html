@@ -92,31 +92,31 @@
             <div class="container">
                 <div class="profile-avatar-wrapper">
                     <!-- Professional Avatar Placeholder -->
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Profile avatar" class="avatar avatar-lg">
-                    <div class="reach-indicator" title="Niveau d'impact">8</div>
+                    <img id="profile-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Profile avatar" class="avatar avatar-lg">
+                    <div class="reach-indicator" id="reach-level" title="Niveau d'impact">8</div>
                 </div>
                 
                 <div class="profile-info">
-                    <h1>Sarah L.</h1>
-                    <div class="mb-2">
+                    <h1 id="profile-name">Sarah L.</h1>
+                    <div class="mb-2" id="profile-badges">
                         <span class="badge badge-green">Écolo Actif</span>
                         <span class="badge badge-blue">Mentor</span>
                         <span class="badge badge-orange">Top Contrib</span>
                     </div>
-                    <p class="profile-bio">Passionnée par le développement durable et l'économie circulaire. Je cherche des missions pour aider les assos locales à réduire leur empreinte carbone.</p>
+                    <p id="profile-bio" class="profile-bio">Passionnée par le développement durable et l'économie circulaire. Je cherche des missions pour aider les assos locales à réduire leur empreinte carbone.</p>
                 </div>
 
                 <div class="profile-stats">
                     <div class="stat-item">
-                        <div class="stat-value">12</div>
+                        <div class="stat-value" id="stat-missions">12</div>
                         <div class="stat-label">Missions</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">45</div>
+                        <div class="stat-value" id="stat-connexions">45</div>
                         <div class="stat-label">Connexions</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">150h</div>
+                        <div class="stat-value" id="stat-impact">150h</div>
                         <div class="stat-label">Impact</div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
             <div class="container grid">
                 <div class="col-md-8">
                     <h2 class="mb-4">Activité récente</h2>
-                    <!-- Activity item -->
+                    <div id="activity-feed">
                     <div class="card mb-4" style="flex-direction: row;">
                         <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60" alt="Event" style="width: 150px; object-fit: cover;">
                         <div class="card-body">
@@ -137,7 +137,6 @@
                             <span class="job-date" style="font-size: 0.85rem; color: var(--text-muted);">Il y a 3 jours</span>
                         </div>
                     </div>
-                    <!-- Activity item -->
                     <div class="card mb-4" style="flex-direction: row;">
                         <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60" alt="Event" style="width: 150px; object-fit: cover;">
                         <div class="card-body">
@@ -145,11 +144,12 @@
                             <span class="job-date" style="font-size: 0.85rem; color: var(--text-muted);">Il y a 1 semaine</span>
                         </div>
                     </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <h2 class="mb-4">Compétences</h2>
                     <div class="card p-3">
-                        <div class="card-body" style="padding: 1.5rem;">
+                    <div id="profile-skills" class="card-body" style="padding: 1.5rem;">
                             <span class="badge badge-blue">Management de Projet</span>
                             <span class="badge badge-green">Économie Circulaire</span>
                             <span class="badge badge-orange">Animation d'Atelier</span>
@@ -161,5 +161,7 @@
         </section>
     </main>
     <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/profile.js"></script>
 </body>
 </html>
